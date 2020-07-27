@@ -1,26 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
-import BrandTitle from './brand_title'
+import { 
+    NavBar, 
+    NavTitle, 
+    NavList, 
+    NavItem, 
+    NavLink 
+} from './nav_components'
 
 const Header = () => {
     return (
-        <nav>
-            <BrandTitle>
+        <NavBar>
+            <NavTitle color="white">
                 Firebase example app
-            </BrandTitle>
-            <ul>
-                <li>
-                    <Link to=""></Link>
-                </li>
-                <li>
-                    <Link to=""></Link>
-                </li>
-                <li>
-                    <Link to=""></Link>
-                </li>
-            </ul>
-        </nav>
+            </NavTitle>
+            <NavList>
+                <NavItem>
+                    <NavLink to="/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink to="/about">About</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink to="/contact">Contact</NavLink>
+                </NavItem>
+            </NavList>
+        </NavBar>
     )
 }
 
