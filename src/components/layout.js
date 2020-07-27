@@ -7,7 +7,9 @@ const Layout = ({ children }) => {
         <div>
             <Header />
             {children}
-            <Footer />
+            <Footer>
+                Page created by Felipe Olavarría, Copyright @ 2020
+            </Footer>
         </div>
     )
 }
