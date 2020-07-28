@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
+import { useFirebase } from '../firebase';
 
 import Layout from '../components/layout'
 import Form from '../components/form'
 
 
-const Register = () => {
+const Register = props => {
+    const firebase = useFirebase()
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ repeatPassword, setRepeatPassword ] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(email, password, repeatPassword)
+ 
+        firebase
+            .doCreateUserWithEmailAndPassword(email, password)
+            .then(authUser => {
+
+                props.history.push("/");
+            })
+            .catch(error => {
+                this.setState({ error })
+            }) 
     }
 
     const fields = [
