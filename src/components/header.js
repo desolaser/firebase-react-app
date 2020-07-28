@@ -19,10 +19,10 @@ const Header = () => {
                     <NavLink to="/">Home</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/about">About</NavLink>
+                    <NavLink to="/login">Login</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink to="/contact">Contact</NavLink>
+                    <NavLink to="/register">register</NavLink>
                 </NavItem>
             </NavList>
         </NavBar>
