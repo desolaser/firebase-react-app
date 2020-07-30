@@ -57,11 +57,11 @@ const Register = props => {
     return (
         <Layout>
             <Form 
-                title="Submit form"
-                fields={fields} 
-                handleSubmit={handleSubmit} 
-                submitValue="Sign Up" 
-                disabled={isInvalid} 
+                title="Register form"
+                fields={fields}
+                handleSubmit={handleSubmit}
+                submitValue="Sign Up"
+                disabled={isInvalid}
             />
             {error && <p>{error.message}</p>}
         </Layout>
