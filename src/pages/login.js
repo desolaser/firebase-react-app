@@ -1,16 +1,29 @@
 import React, { useState } from 'react'
-
+import { useFirebase } from '../firebase'
+ 
 import Layout from '../components/layout'
 import Form from '../components/form'
 
 
 const Login = () => {
+    const firebase = useFirebase()
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ error, setError ] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()
+
+        firebase.
+            doSignInWithEmailAndPassword(email, password)
+            .then(authUser => {
+                setEmail('')
+                setPassword('')
+                alert("You are logged in")
+            })
+            .catch(error => {
+                setError(error)
+            })
     }
 
     const fields = [
