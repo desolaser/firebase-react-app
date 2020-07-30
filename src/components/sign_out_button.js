@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from './nav_components'
+import { NavButton } from './nav_components'
 import { useFirebase } from '../firebase'
  
 const SignOutButton = () => {
@@ -11,9 +11,9 @@ const SignOutButton = () => {
     }
 
     return (
-        <NavLink onClick={handleClick}>
+        <NavButton onClick={handleClick}>
             Sign Out
-        </NavLink>
+        </NavButton>
     )
 }
  

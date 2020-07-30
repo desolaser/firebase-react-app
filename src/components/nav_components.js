@@ -32,4 +32,11 @@ const NavLink = styled(Link)`
     color: white;
 `
 
-export { NavBar, NavTitle, NavList, NavItem, NavLink }
+const NavButton = styled.div`
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+`
+
+export { NavBar, NavTitle, NavList, NavItem, NavLink, NavButton }
