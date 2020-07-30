@@ -7,10 +7,10 @@ import Form from '../components/form'
 const Login = () => {
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+    const [ error, setError ] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(email, password)
     }
 
     const fields = [
@@ -31,6 +31,7 @@ const Login = () => {
     return (
         <Layout>
             <Form fields={fields} handleSubmit={handleSubmit} submitValue="Log In" />
+            {error && <p>{error.message}</p>}
         </Layout>
     )
 }
