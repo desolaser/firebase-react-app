@@ -26,6 +26,8 @@ const Login = () => {
             })
     }
 
+    const isInvalid = email === '' || password === ''
+
     const fields = [
         {
             label: "Email",
@@ -43,7 +45,13 @@ const Login = () => {
 
     return (
         <Layout>
-            <Form fields={fields} handleSubmit={handleSubmit} submitValue="Log In" />
+            <Form 
+                title="Log in form"
+                fields={fields}
+                handleSubmit={handleSubmit}
+                submitValue="Log In"
+                disabled={isInvalid}
+            />
             {error && <p>{error.message}</p>}
         </Layout>
     )
