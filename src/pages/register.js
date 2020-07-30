@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useFirebase } from '../firebase';
+import { useFirebase } from '../firebase'
 
 import Layout from '../components/layout'
 import Form from '../components/form'
@@ -29,9 +29,9 @@ const Register = props => {
     }
 
     const isInvalid =
-      password !== repeatPassword ||
-      password === '' ||
-      email === '';
+        password !== repeatPassword ||
+        password === '' ||
+        email === ''
 
     const fields = [
         {
