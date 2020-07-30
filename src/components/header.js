@@ -8,6 +8,8 @@ import {
     NavLink 
 } from './nav_components'
 
+import SignOutButton from './sign_out_button'
+
 const Header = () => {
     return (
         <NavBar>
@@ -23,6 +25,9 @@ const Header = () => {
                 </NavItem>
                 <NavItem>
                     <NavLink to="/register">register</NavLink>
+                </NavItem>
+                <NavItem>
+                    <SignOutButton />
                 </NavItem>
             </NavList>
         </NavBar>
