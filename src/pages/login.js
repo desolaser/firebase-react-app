@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { useFirebase } from '../firebase'
+import { useAuth } from '../auth'
  
 import Layout from '../components/layout'
 import Form from '../components/form'
 
 
-const Login = () => {
+const Login = props => {
     const firebase = useFirebase()
+    const { setUser } = useAuth()
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ error, setError ] = useState('')
@@ -14,12 +16,14 @@ const Login = () => {
     const handleSubmit = e => {
         e.preventDefault()
 
-        firebase.
-            doSignInWithEmailAndPassword(email, password)
+        firebase
+            .doSignInWithEmailAndPassword(email, password)
             .then(authUser => {
                 setEmail('')
                 setPassword('')
+                setUser(authUser)
                 alert("You are logged in")
+                props.history.push("/budgets")
             })
             .catch(error => {
                 setError(error)
