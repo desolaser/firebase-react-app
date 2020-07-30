@@ -20,7 +20,8 @@ const Register = props => {
                 setEmail('')
                 setPassword('')
                 setRepeatPassword('')
-                props.history.push("/");
+                props.history.push("/login")
+                alert("Registration successful, you can log in now")
             })
             .catch(error => {
                 setError(error)
