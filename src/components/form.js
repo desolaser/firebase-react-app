@@ -7,11 +7,11 @@ import {
 } from './form_components'
 import Input from './input'
 
-const Form = ({ fields, handleSubmit, submitValue, title }) => {
+const Form = ({ fields, handleSubmit, submitValue, title, disabled }) => {
     return (
         <FormContainer onSubmit={handleSubmit}>
             <center>
-                <FormTitle>Log in form</FormTitle>
+                <FormTitle>{title}</FormTitle>
             </center>
             {fields.map(field => {
                 return (
@@ -24,7 +24,7 @@ const Form = ({ fields, handleSubmit, submitValue, title }) => {
                     />
                 )
             })}
-            <FormButton>{submitValue}</FormButton>
+            <FormButton disabled={disabled}>{submitValue}</FormButton>
         </FormContainer>
     )
 }
