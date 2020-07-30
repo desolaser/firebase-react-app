@@ -4,12 +4,12 @@ import { useFirebase } from '../firebase';
 import Layout from '../components/layout'
 import Form from '../components/form'
 
-
 const Register = props => {
     const firebase = useFirebase()
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ repeatPassword, setRepeatPassword ] = useState('')
+    const [ error, setError ] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -17,13 +17,20 @@ const Register = props => {
         firebase
             .doCreateUserWithEmailAndPassword(email, password)
             .then(authUser => {
-
+                setEmail('')
+                setPassword('')
+                setRepeatPassword('')
                 props.history.push("/");
             })
             .catch(error => {
-                this.setState({ error })
+                setError(error)
             }) 
     }
+
+    const isInvalid =
+      password !== repeatPassword ||
+      password === '' ||
+      email === '';
 
     const fields = [
         {
@@ -48,7 +55,14 @@ const Register = props => {
 
     return (
         <Layout>
-            <Form fields={fields} handleSubmit={handleSubmit} submitValue="Sign Up" />
+            <Form 
+                title="Submit form"
+                fields={fields} 
+                handleSubmit={handleSubmit} 
+                submitValue="Sign Up" 
+                disabled={isInvalid} 
+            />
+            {error && <p>{error.message}</p>}
         </Layout>
     )
 }
