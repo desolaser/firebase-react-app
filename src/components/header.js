@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAuth } from '../auth'
 
 import { 
     NavBar, 
@@ -11,6 +12,8 @@ import {
 import SignOutButton from './sign_out_button'
 
 const Header = () => {
+    const { user } = useAuth()
+
     return (
         <NavBar>
             <NavTitle color="white">
@@ -20,15 +23,32 @@ const Header = () => {
                 <NavItem>
                     <NavLink to="/">Home</NavLink>
                 </NavItem>
-                <NavItem>
-                    <NavLink to="/login">Login</NavLink>
-                </NavItem>
-                <NavItem>
-                    <NavLink to="/register">register</NavLink>
-                </NavItem>
-                <NavItem>
-                    <SignOutButton />
-                </NavItem>
+                {
+                    user ?
+                    (
+                        <>
+                            <NavItem>
+                                <NavLink to="/budgets">Budgets</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/products">Products</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <SignOutButton />
+                            </NavItem>
+                        </>
+                    ) :
+                    (
+                        <>
+                            <NavItem>
+                                <NavLink to="/login">Login</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="/register">Register</NavLink>
+                            </NavItem>
+                        </>
+                    )
+                }
             </NavList>
         </NavBar>
     )
