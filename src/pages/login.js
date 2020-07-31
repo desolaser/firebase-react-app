@@ -57,7 +57,7 @@ const Login = props => {
                 submitValue="Log In"
                 disabled={isInvalid}
             />
-            {error && <Error>{error.message}</Error>}
+            {error && <Error message={error.message} />}
         </Layout>
     )
 }

@@ -64,7 +64,7 @@ const Register = props => {
                 submitValue="Sign Up"
                 disabled={isInvalid}
             />
-            {error && <Error>{error.message}</Error>}
+            {error && <Error message={error.message} />}
         </Layout>
     )
 }
