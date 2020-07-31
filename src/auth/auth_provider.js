@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { AuthContext } from './auth'
 import { useFirebase } from '../firebase'
 
@@ -9,16 +9,6 @@ const AuthProvider = props => {
     const userData = JSON.parse(localStorage.getItem("user"))
     const [authTokens, setAuthTokens] = useState(existingTokens)
     const [user, setUser] = useState(userData)
-
-    useEffect(() => {
-        firebase.auth.onAuthStateChanged(
-            authUser => {
-                authUser
-                    ? setUser(authUser)
-                    : setUser(null)
-            }
-        )
-    })  
     
     const setTokens = (data) => {
         localStorage.setItem("tokens", JSON.stringify(data))
