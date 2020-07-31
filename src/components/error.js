@@ -5,7 +5,9 @@ const ErrorDiv = styled.div`
     background-color: tomato;
     border-radius: 10px;
     padding: 1rem;
-    box-shadow: 1px 0 1px #eeeeee;
+    box-shadow: 0 2px 2px #aaaaaa;
+    margin-top: 2rem;
+    color: white;
 `
 
 const Error = ({ message }) => {
