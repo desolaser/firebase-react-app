@@ -27,7 +27,7 @@ const FormButton = styled.button`
     display: block;
     border: none;
     border-radius: 10px;
-    background-color: dodgerblue;
+    background-color:  ${props => props.disabled ? 'grey' : 'dodgerblue'} ;
     color: white;
     padding: 1rem;
     margin: auto;
