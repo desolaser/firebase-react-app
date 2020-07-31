@@ -4,6 +4,7 @@ import { useAuth } from '../auth'
  
 import Layout from '../components/layout'
 import Form from '../components/form'
+import Error from '../components/error'
 
 
 const Login = props => {
@@ -56,7 +57,7 @@ const Login = props => {
                 submitValue="Log In"
                 disabled={isInvalid}
             />
-            {error && <p>{error.message}</p>}
+            {error && <Error>{error.message}</Error>}
         </Layout>
     )
 }

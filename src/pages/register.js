@@ -3,6 +3,7 @@ import { useFirebase } from '../firebase'
 
 import Layout from '../components/layout'
 import Form from '../components/form'
+import Error from '../components/error'
 
 const Register = props => {
     const firebase = useFirebase()
@@ -63,7 +64,7 @@ const Register = props => {
                 submitValue="Sign Up"
                 disabled={isInvalid}
             />
-            {error && <p>{error.message}</p>}
+            {error && <Error>{error.message}</Error>}
         </Layout>
     )
 }
