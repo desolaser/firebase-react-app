@@ -10,7 +10,13 @@ const Admin = () => {
 
     useEffect(() => {
         firebase.users().on('value', snapshot => {
-            setUsers(snapshot.val())
+            const usersObject = snapshot.val();
+            const usersList = Object.keys(usersObject).map(key => ({
+                ...usersObject[key],
+                uid: key,
+            }));
+
+            setUsers(usersList)
             setLoading(false)
         })
     }, [])
@@ -18,7 +24,7 @@ const Admin = () => {
     return (
         <Layout>
             <h1>Admin</h1>
-            
+
         </Layout>
     )
 }
