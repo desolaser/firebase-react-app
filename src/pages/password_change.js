@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import queryString from 'query-string'
 import { useFirebase } from '../firebase'
  
 import Layout from '../components/layout'
@@ -14,9 +15,11 @@ const PasswordChange = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
+        let url = props.location.search
+        let params = queryString.parse(url)
 
         firebase
-            .doPasswordUpdate(password)
+            .confirmPasswordReset(params.oobCode, password)
             .then(authUser => {
                 setPassword('')
                 setRepeatPassword('')
@@ -28,7 +31,7 @@ const PasswordChange = props => {
             })
     }
 
-    const isInvalid = password === repeatPassword || password === ''
+    const isInvalid = password !== repeatPassword || password === ''
 
     const fields = [
         {
