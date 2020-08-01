@@ -13,20 +13,33 @@ const PasswordChangeForm = props => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        let url = props.location.search
-        let params = queryString.parse(url)
-
-        firebase
-            .confirmPasswordReset(params.oobCode, password)
-            .then(authUser => {
-                setPassword('')
-                setRepeatPassword('')
-                alert("Your password has been changed, you should be able to log in with the new password")
-                props.history.push("/login")
-            })
-            .catch(error => {
-                setError(error)
-            })
+        if (props.user) {            
+            firebase
+                .doPasswordUpdate(password)
+                .then(authUser => {
+                    setPassword('')
+                    setRepeatPassword('')
+                    alert("Your password has been changed, you should be able to log in with the new password")
+                })
+                .catch(error => {
+                    setError(error)
+                })
+        } else {
+            let url = props.location.search
+            let params = queryString.parse(url)
+    
+            firebase
+                .confirmPasswordReset(params.oobCode, password)
+                .then(authUser => {
+                    setPassword('')
+                    setRepeatPassword('')
+                    alert("Your password has been changed, you should be able to log in with the new password")
+                    props.history.push("/login")
+                })
+                .catch(error => {
+                    setError(error)
+                })
+        }
     }
 
     const isInvalid = password !== repeatPassword || password === ''
