@@ -22,6 +22,9 @@ const Register = props => {
                 setEmail('')
                 setPassword('')
                 setRepeatPassword('')
+                firebase.user(authUser.user.uid).set({
+                    email
+                });
                 props.history.push("/login")
                 alert("Registration successful, you can log in now")
             })
