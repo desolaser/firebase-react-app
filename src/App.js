@@ -5,6 +5,7 @@ import AuthProvider from './auth'
 import PrivateRoute from './components/private_route'
 
 import Home from './pages/home'
+import Account from './pages/account'
 import Budgets from './pages/budgets'
 import Products from './pages/products'
 import Login from './pages/login'
@@ -20,6 +21,7 @@ function App() {
                     <Route path="/register" exact component={Register} />
                     <PrivateRoute path="/budgets" exact component={Budgets} />
                     <PrivateRoute path="/products" exact component={Products} />
+                    <PrivateRoute path="/account" exact component={Account} />
                 </Switch>
             </Router>
         </AuthProvider>
