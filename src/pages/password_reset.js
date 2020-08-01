@@ -17,7 +17,7 @@ const PasswordReset = props => {
             .doPasswordReset(email)
             .then(authUser => {
                 setEmail('')
-                props.history.push("/password_change")
+                alert('We have sent an email with the password change link to your email account')
             })
             .catch(error => {
                 setError(error)
