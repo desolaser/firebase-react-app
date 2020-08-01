@@ -37,11 +37,23 @@ class Firebase {
     confirmPasswordReset = (code, password) =>
         this.auth.confirmPasswordReset(code, password)
     
-        // *** User API ***
+    // *** User API ***
  
     user = uid => this.db.ref(`users/${uid}`)
 
     users = () => this.db.ref('users')
+    
+    // *** Budgets API ***
+
+    budget = bid => this.db.ref(`budgets/${bid}`)
+
+    budgets = () => this.db.ref('budgets')
+        
+    // *** Products API ***
+ 
+    product = pid => this.db.ref(`products/${pid}`)
+
+    products = () => this.db.ref('products')
 }
 
 export default Firebase
