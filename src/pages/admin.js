@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useFirebase } from '../firebase'
+
 import Layout from '../components/layout'
+import StyledList from '../components/styled_list'
 
 const Admin = () => {
     const firebase = useFirebase()
@@ -12,8 +14,8 @@ const Admin = () => {
         firebase.users().on('value', snapshot => {
             const usersObject = snapshot.val()
             const usersList = Object.keys(usersObject).map(key => ({
-                ...usersObject[key],
                 uid: key,
+                ...usersObject[key],
             }))
     
             setUsers(usersList)
@@ -23,23 +25,11 @@ const Admin = () => {
         return () => firebase.users().off()
     })
 
-
     return (
         <Layout>
             <h1>Admin</h1>
             {loading && <div>Loading ...</div>} 
-            <ul>
-                {users.map(user => (
-                    <li key={user.uid}>
-                        <span>
-                            <strong>ID:</strong> {user.uid}
-                        </span>
-                        <span>
-                            <strong>E-Mail:</strong> {user.email}
-                        </span>
-                    </li>
-                ))}
-            </ul>
+            <StyledList data={users} />
         </Layout>
     )
 }
