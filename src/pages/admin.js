@@ -19,6 +19,10 @@ const Admin = () => {
             setUsers(usersList)
             setLoading(false)
         })
+
+        return (
+            firebase.users().off()
+        )
     }, [])
 
     return (
