@@ -12,6 +12,7 @@ import Login from './pages/login'
 import Register from './pages/register'
 import PasswordReset from './pages/password_reset'
 import PasswordChange from './pages/password_change'
+import Admin from './pages/admin'
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
                     <PrivateRoute path="/budgets" exact component={Budgets} />
                     <PrivateRoute path="/products" exact component={Products} />
                     <PrivateRoute path="/account" exact component={Account} />
+                    <PrivateRoute path="/admin" exact component={Admin} />
                 </Switch>
             </Router>
         </AuthProvider>

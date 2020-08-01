@@ -37,6 +37,9 @@ const Header = () => {
                                 <NavLink to="/account">Account</NavLink>
                             </NavItem>
                             <NavItem>
+                                <NavLink to="/admin">Admin</NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <SignOutButton />
                             </NavItem>
                         </>
