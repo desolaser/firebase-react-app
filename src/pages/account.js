@@ -1,14 +1,17 @@
 import React from 'react'
+import { useAuth } from '../auth'
+
+import Layout from '../components/layout'
+import PasswordChangeForm from '../components/password_change_form'
  
-import PasswordResetForm from '../pages/password_reset'
-import PasswordChangeForm from '../pages/password_change'
- 
-const AccountPage = () => (
-  <div>
-    <h1>Account Page</h1>
-    <PasswordResetForm />
-    <PasswordChangeForm />
-  </div>
-);
+const AccountPage = () => {
+    const { user, setUser } = useAuth()
+
+    return (
+        <Layout>
+            <PasswordChangeForm user={user} setUser={setUser} />
+        </Layout>
+    )
+}
  
 export default AccountPage
