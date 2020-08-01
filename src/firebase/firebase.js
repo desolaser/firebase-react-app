@@ -33,6 +33,9 @@ class Firebase {
 
     doPasswordUpdate = password =>
         this.auth.currentUser.updatePassword(password)
+
+    confirmPasswordReset = (code, password) =>
+        this.auth.confirmPasswordReset(code, password)
     
         // *** User API ***
  
