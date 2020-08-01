@@ -10,6 +10,7 @@ const PasswordChange = props => {
     const firebase = useFirebase()
     const [ password, setPassword ] = useState('')
     const [ repeatPassword, setRepeatPassword ] = useState('')
+    const [ error, setError ] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()

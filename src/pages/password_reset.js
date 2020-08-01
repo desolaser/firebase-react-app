@@ -9,6 +9,7 @@ import Error from '../components/error'
 const PasswordReset = props => {
     const firebase = useFirebase()
     const [ email, setEmail ] = useState('')
+    const [ error, setError ] = useState('')
 
     const handleSubmit = e => {
         e.preventDefault()
