@@ -3,7 +3,6 @@ import { useFirebase } from '../firebase'
  
 import Layout from '../components/layout'
 import Form from '../components/form'
-import Input from '../components/input'
 
 const AddProduct = () => {
     const firebase = useFirebase()
