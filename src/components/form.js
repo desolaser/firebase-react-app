@@ -8,7 +8,7 @@ import {
 import Input from './input'
 import Select from './select'
 
-const Form = ({ fields, handleSubmit, submitValue, title, disabled }) => {
+const Form = ({ fields, handleSubmit, submitValue, title, disabled, display }) => {
     return (
         <FormContainer onSubmit={handleSubmit}>
             <center>
@@ -35,7 +35,7 @@ const Form = ({ fields, handleSubmit, submitValue, title, disabled }) => {
                         />
                     )
             )}
-            <FormButton disabled={disabled}>{submitValue}</FormButton>
+            {!display && <FormButton disabled={disabled}>{submitValue}</FormButton>}            
         </FormContainer>
     )
 }
