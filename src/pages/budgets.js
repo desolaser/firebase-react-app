@@ -12,14 +12,16 @@ const Budgets = () => {
 
     useEffect(() => {
         firebase.budgets().on('value', snapshot => {
-            const budgetsObject = snapshot.val()
-            const budgetsList = Object.keys(budgetsObject).map(key => ({
-                id: key,
-                ...budgetsObject[key],
-            }))
-    
-            setBudgets(budgetsList)
-            setLoading(false)
+            if (snapshot.val()) {
+                const budgetsObject = snapshot.val()
+                const budgetsList = Object.keys(budgetsObject).map(key => ({
+                    id: key,
+                    ...budgetsObject[key],
+                }))
+        
+                setBudgets(budgetsList)
+                setLoading(false)
+            }
         })
 
         return () => firebase.budgets().off()

@@ -12,14 +12,16 @@ const Products = () => {
 
     useEffect(() => {
         firebase.products().on('value', snapshot => {
-            const productsObject = snapshot.val()
-            const productsList = Object.keys(productsObject).map(key => ({
-                id: key,
-                ...productsObject[key],
-            }))
-    
-            setProducts(productsList)
-            setLoading(false)
+            if (snapshot.val()) {
+                const productsObject = snapshot.val()
+                const productsList = Object.keys(productsObject).map(key => ({
+                    id: key,
+                    ...productsObject[key],
+                }))
+        
+                setProducts(productsList)
+                setLoading(false)
+            }
         })
 
         return () => firebase.products().off()
