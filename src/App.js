@@ -8,6 +8,8 @@ import Home from './pages/home'
 import Account from './pages/account'
 import Budgets from './pages/budgets'
 import Products from './pages/products'
+import AddBudget from './pages/add_budget'
+import AddProduct from './pages/add_product'
 import Login from './pages/login'
 import Register from './pages/register'
 import PasswordReset from './pages/password_reset'
@@ -25,7 +27,9 @@ function App() {
                     <Route path="/password_reset" exact component={PasswordReset} />
                     <Route path="/password_change" exact component={PasswordChange} />
                     <PrivateRoute path="/budgets" exact component={Budgets} />
+                    <PrivateRoute path="/add_budget" exact component={AddBudget} />
                     <PrivateRoute path="/products" exact component={Products} />
+                    <PrivateRoute path="/add_product" exact component={AddProduct} />
                     <PrivateRoute path="/account" exact component={Account} />
                     <PrivateRoute path="/admin" exact component={Admin} />
                 </Switch>
