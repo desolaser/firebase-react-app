@@ -14,7 +14,7 @@ const Budgets = () => {
         firebase.budgets().on('value', snapshot => {
             const budgetsObject = snapshot.val()
             const budgetsList = Object.keys(budgetsObject).map(key => ({
-                uid: key,
+                id: key,
                 ...budgetsObject[key],
             }))
     

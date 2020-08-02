@@ -14,7 +14,7 @@ const Products = () => {
         firebase.products().on('value', snapshot => {
             const productsObject = snapshot.val()
             const productsList = Object.keys(productsObject).map(key => ({
-                uid: key,
+                id: key,
                 ...productsObject[key],
             }))
     
