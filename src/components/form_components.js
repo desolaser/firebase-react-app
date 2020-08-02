@@ -15,11 +15,17 @@ const FormInput = styled.input`
     font-size: 1rem;
 `
 
+const FormSelect = styled.select`
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+`
+
 const FormContainer = styled.form`
     box-shadow: 0px 2px 6px #777777;
     border-radius: 10px;
     width: 750px;
-    margin: auto;
+    margin: 2rem auto;
     padding: 3rem;
 `
 
@@ -37,4 +43,4 @@ const FormTitle = styled.div`
     font-size: 2rem;
 `
 
-export { FormControl, FormLabel, FormInput, FormContainer, FormButton, FormTitle }
+export { FormControl, FormLabel, FormInput, FormContainer, FormButton, FormTitle, FormSelect }
