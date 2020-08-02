@@ -11,7 +11,7 @@ const Select = ({ label, onChange, value, options }) => {
         <FormControl>
             <FormLabel htmlFor="">{label}</FormLabel>
             <FormSelect onChange={onChange} value={value}>
-                {options.map(item => <option value={item.id}>{item.name}</option>)}
+                {options.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
             </FormSelect>
         </FormControl>
     )
