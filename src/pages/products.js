@@ -3,6 +3,7 @@ import { useFirebase } from '../firebase'
 
 import Layout from '../components/layout'
 import StyledList from '../components/styled_list'
+import StyledLink from '../components/styled_link'
 
 const Products = () => {
     const firebase = useFirebase()
@@ -30,6 +31,7 @@ const Products = () => {
     return (
         <Layout>
             <h1>Products</h1>
+            <StyledLink to="/add_budget">Add products</StyledLink>
             {loading && <div>Loading ...</div>} 
             <StyledList data={products} />
         </Layout>
