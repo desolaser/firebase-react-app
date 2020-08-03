@@ -4,7 +4,9 @@ import { useFirebase } from '../firebase'
 import Layout from '../components/layout'
 import Form from '../components/form'
 import Input from '../components/input'
+import Panel from '../components/panel'
 import StyledList from '../components/styled_list'
+import { FormTitle } from '../components/form_components'
 
 const AddBudget = () => {
     const firebase = useFirebase()
@@ -28,6 +30,12 @@ const AddBudget = () => {
                     id: key,
                     ...productsObject[key],
                 }))
+
+                productsList.unshift({
+                    id: 0,
+                    value: "",
+                    name: "Select a product"
+                });
         
                 setProducts(productsList)
             }
@@ -47,6 +55,8 @@ const AddBudget = () => {
             total,
             products: budgetProducts
         })
+
+        alert('Budget submitted')
     }
 
     const handleProductSubmit = e => {
@@ -69,21 +79,6 @@ const AddBudget = () => {
 
     const isInvalid = company === '' || contact === '' || sum === 0
     const isInvalidProducts = selectedProduct === '' || quantity === 0
-
-    const fields = [
-        {
-            label: "Company",
-            type: "text",
-            value: company,
-            onChange: e => setCompany(e.target.value)
-        },
-        {
-            label: "Contact",
-            type: "text",
-            value: contact,
-            onChange: e => setContact(e.target.value)
-        },
-    ]
 
     const product_fields = [
         {
@@ -122,13 +117,13 @@ const AddBudget = () => {
 
     return (
         <Layout>
-            <Form 
-                title="Budget form"
-                fields={fields}
-                handleSubmit={handleBudgetSubmit}
-                submitValue="Submit"
-                disabled={isInvalid}
-            />
+            <Panel>
+                <center>
+                    <FormTitle>Company data</FormTitle>
+                </center>
+                <Input label="Company" type="text" value={company} onChange={e => setCompany(e.target.value)} />
+                <Input label="Contact" type="text" value={contact} onChange={e => setContact(e.target.value)} />
+            </Panel>
             <Form 
                 title="Add product to the budget"
                 fields={product_fields}
@@ -140,7 +135,9 @@ const AddBudget = () => {
             <Form 
                 title="Calculations"
                 fields={display_fields}
-                display
+                handleSubmit={handleBudgetSubmit}
+                submitValue="Submit budget"
+                disabled={isInvalid}
             />
         </Layout>
     )
