@@ -30,7 +30,7 @@ const Products = props => {
     return (
         <Layout>
             <h1>Products</h1>
-            <StyledLink to="/add_budget">Add products</StyledLink>
+            <StyledLink to="/add_product">Add products</StyledLink>
             {loading && <div>Loading ...</div>} 
             <ProductsList history={props.history} data={products} />
         </Layout>
