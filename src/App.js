@@ -10,6 +10,7 @@ import Budgets from './pages/budgets'
 import Products from './pages/products'
 import AddBudget from './pages/add_budget'
 import AddProduct from './pages/add_product'
+import EditProduct from './pages/edit_product'
 import Login from './pages/login'
 import Register from './pages/register'
 import PasswordReset from './pages/password_reset'
@@ -30,6 +31,7 @@ function App() {
                     <PrivateRoute path="/add_budget" exact component={AddBudget} />
                     <PrivateRoute path="/products" exact component={Products} />
                     <PrivateRoute path="/add_product" exact component={AddProduct} />
+                    <PrivateRoute path="/edit_product/:id" exact component={EditProduct} />
                     <PrivateRoute path="/account" exact component={Account} />
                     <PrivateRoute path="/admin" exact component={Admin} />
                 </Switch>
