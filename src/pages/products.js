@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { useFirebase } from '../firebase'
 
 import Layout from '../components/layout'
-import StyledList from '../components/styled_list'
+import ProductsList from '../components/products_list'
 import StyledLink from '../components/styled_link'
 
-const Products = () => {
+const Products = props => {
     const firebase = useFirebase()
-
     const [ products, setProducts ] = useState([])
     const [ loading, setLoading ] = useState(true)
 
@@ -33,7 +32,7 @@ const Products = () => {
             <h1>Products</h1>
             <StyledLink to="/add_budget">Add products</StyledLink>
             {loading && <div>Loading ...</div>} 
-            <StyledList data={products} />
+            <ProductsList history={props.history} data={products} />
         </Layout>
     )
 }
