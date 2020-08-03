@@ -3,7 +3,7 @@ import queryString from 'query-string'
 import { useFirebase } from '../firebase'
  
 import Form from '../components/form'
-import Error from '../components/error'
+import Alert from '../components/alert'
 
 const PasswordChangeForm = props => {
     const firebase = useFirebase()
@@ -68,7 +68,7 @@ const PasswordChangeForm = props => {
                 submitValue="Change password"
                 disabled={isInvalid}
             />
-            {error && <Error message={error.message} />}
+            {error && <Alert>{error.message}</Alert>}
         </>
     )
 }

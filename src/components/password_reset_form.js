@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useFirebase } from '../firebase'
  
 import Form from '../components/form'
-import Error from '../components/error'
+import Alert from '../components/alert'
 
 const PasswordResetForm = () => {
     const firebase = useFirebase()
@@ -43,7 +43,7 @@ const PasswordResetForm = () => {
                 submitValue="Send Email"
                 disabled={isInvalid}
             />
-            {error && <Error message={error.message} />}
+            {error && <Alert>{error.message}</Alert>}
         </>
     )
 }
