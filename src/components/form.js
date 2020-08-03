@@ -1,16 +1,16 @@
 import React from 'react'
 
 import {
-    FormContainer,
     FormButton,
     FormTitle
 } from './form_components'
+import Panel from './panel'
 import Input from './input'
 import Select from './select'
 
-const Form = ({ fields, handleSubmit, submitValue, title, disabled, display }) => {
+const Form = ({ fields, handleSubmit, submitValue, title, disabled }) => {
     return (
-        <FormContainer onSubmit={handleSubmit}>
+        <Panel onSubmit={handleSubmit}>
             <center>
                 <FormTitle>{title}</FormTitle>
             </center>
@@ -35,8 +35,8 @@ const Form = ({ fields, handleSubmit, submitValue, title, disabled, display }) =
                         />
                     )
             )}
-            {!display && <FormButton disabled={disabled}>{submitValue}</FormButton>}            
-        </FormContainer>
+            <FormButton disabled={disabled}>{submitValue}</FormButton>
+        </Panel>
     )
 }
 
