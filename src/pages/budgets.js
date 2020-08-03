@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useFirebase } from '../firebase'
 
 import Layout from '../components/layout'
-import StyledList from '../components/styled_list'
+import BudgetsList from '../components/budgets_list'
 import StyledLink from '../components/styled_link'
 
 const Budgets = () => {
@@ -33,7 +33,7 @@ const Budgets = () => {
             <h1>Budgets</h1>
             <StyledLink to="/add_budget">Add budget</StyledLink>
             {loading && <div>Loading ...</div>} 
-            <StyledList data={budgets} />
+            <BudgetsList data={budgets} />
         </Layout>
     )
 }
