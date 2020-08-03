@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Panel from './panel'
 
 const FormControl = styled.div`
     margin: 1rem 0;
@@ -22,6 +21,14 @@ const FormSelect = styled.select`
     font-size: 1rem;
 `
 
+const FormContainer = styled.form`
+    box-shadow: 0px 2px 6px #777777;
+    border-radius: 10px;
+    width: 750px;
+    margin: 2rem auto;
+    padding: 3rem;
+`
+
 const FormButton = styled.button`
     display: block;
     border: none;
@@ -36,4 +43,4 @@ const FormTitle = styled.div`
     font-size: 2rem;
 `
 
-export { FormControl, FormLabel, FormInput, FormButton, FormTitle, FormSelect }
+export { FormControl, FormLabel, FormInput, FormContainer, FormButton, FormTitle, FormSelect }
