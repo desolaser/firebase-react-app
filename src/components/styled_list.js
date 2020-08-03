@@ -22,6 +22,17 @@ const StyledElement = styled.div`
     padding: 0.25rem 0;
 `
 
+const StyledButton = styled.button`
+    text-decoration: none;
+    border: none;
+    color: ${({ textColor }) => textColor ? textColor : "dodgerblue"};
+    background-color: ${({ color }) => color ? color : "dodgerblue"};
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    margin-right: 1rem;
+`
+
 const StyledList = ({ data }) => (
     <StyledUl>
         {data.map(item => (
@@ -37,3 +48,4 @@ const StyledList = ({ data }) => (
 )
 
 export default StyledList
+export { StyledUl, StyledLi, StyledElement, StyledField, StyledButton }
