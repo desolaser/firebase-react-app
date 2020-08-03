@@ -3,7 +3,7 @@ import { useFirebase } from '../firebase'
 
 import Layout from '../components/layout'
 import Form from '../components/form'
-import Error from '../components/error'
+import Alert from '../components/alert'
 import StyledLink from '../components/styled_link'
 
 const Register = props => {
@@ -69,7 +69,7 @@ const Register = props => {
                 disabled={isInvalid}
             />
             <StyledLink to="/password_reset">Forgot your password? Click here</StyledLink>
-            {error && <Error message={error.message} />}
+            {error && <Alert>{error.message}</Alert>}
         </Layout>
     )
 }
