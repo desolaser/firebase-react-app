@@ -39,6 +39,8 @@ const EditBudget = ({ match }) => {
                 });
         
                 setProducts(productsList)
+            } else {
+                setProducts([])
             }
         })
 
@@ -91,7 +93,6 @@ const EditBudget = ({ match }) => {
             if (checkProduct) {
                 const newBudgetProducts = budgetProducts.map(item => {
                     if(item.id === product.id) {
-                        item.price = parseInt(item.price, 10) + parseInt(product.price, 10)
                         item.quantity = parseInt(item.quantity, 10) + parseInt(product.quantity, 10)
                     }
                     return item
@@ -100,17 +101,22 @@ const EditBudget = ({ match }) => {
                 setBudgetProducts(newBudgetProducts)
             } else {
                 setBudgetProducts([...budgetProducts,  product])
-                setSum(sum + (product.price * quantity))
-                setTaxes((sum + (product.price * quantity)) * 0.19)
-                setTotal(sum + (product.price * quantity) + (sum + (product.price * quantity)) * 0.19)
             }
+            setSum(sum + (product.price * quantity))
+            setTaxes((sum + (product.price * quantity)) * 0.19)
+            setTotal(sum + (product.price * quantity) + (sum + (product.price * quantity)) * 0.19)
         }).catch(error => {
             console.log("error".error)
         })
     }
 
     const deleteBudgetProduct = product_id => {
-        setBudgetProducts(_.filter(budgetProducts, product => product.id !== product_id))
+        const product = _.find(budgetProducts, product => product.id === product_id)
+        setSum(sum - (product.price * product.quantity))
+        setTaxes((sum - (product.price * product.quantity)) * 0.19)
+        setTotal(sum - (product.price * product.quantity) + (sum - (product.price * product.quantity)) * 0.19)
+        const newBudgetProducts = _.filter(budgetProducts, product => product.id !== product_id)
+        setBudgetProducts(newBudgetProducts)
     }
 
     const isInvalid = company === '' || contact === '' || sum === 0

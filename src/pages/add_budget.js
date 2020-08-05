@@ -73,7 +73,6 @@ const AddBudget = () => {
             if (checkProduct) {
                 const newBudgetProducts = budgetProducts.map(item => {
                     if(item.id === product.id) {
-                        item.price = parseInt(item.price, 10) + parseInt(product.price, 10)
                         item.quantity = parseInt(item.quantity, 10) + parseInt(product.quantity, 10)
                     }
                     return item
@@ -82,10 +81,10 @@ const AddBudget = () => {
                 setBudgetProducts(newBudgetProducts)
             } else {
                 setBudgetProducts([...budgetProducts,  product])
-                setSum(sum + (product.price * quantity))
-                setTaxes((sum + (product.price * quantity)) * 0.19)
-                setTotal(sum + (product.price * quantity) + (sum + (product.price * quantity)) * 0.19)
             }
+            setSum(sum + (product.price * quantity))
+            setTaxes((sum + (product.price * quantity)) * 0.19)
+            setTotal(sum + (product.price * quantity) + (sum + (product.price * quantity)) * 0.19)
         }).catch(error => {
             console.log("error".error)
         })
