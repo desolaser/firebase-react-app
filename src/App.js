@@ -11,6 +11,7 @@ import Products from './pages/products'
 import AddBudget from './pages/add_budget'
 import AddProduct from './pages/add_product'
 import EditProduct from './pages/edit_product'
+import EditBudget from './pages/edit_budget'
 import Login from './pages/login'
 import Register from './pages/register'
 import PasswordReset from './pages/password_reset'
@@ -29,6 +30,7 @@ function App() {
                     <Route path="/password_change" exact component={PasswordChange} />
                     <PrivateRoute path="/budgets" exact component={Budgets} />
                     <PrivateRoute path="/add_budget" exact component={AddBudget} />
+                    <PrivateRoute path="/edit_budget/:id" exact component={EditBudget} />
                     <PrivateRoute path="/products" exact component={Products} />
                     <PrivateRoute path="/add_product" exact component={AddProduct} />
                     <PrivateRoute path="/edit_product/:id" exact component={EditProduct} />

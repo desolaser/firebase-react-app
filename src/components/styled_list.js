@@ -36,7 +36,7 @@ const StyledButton = styled.button`
 const StyledList = ({ data }) => (
     <StyledUl>
         {data.map(item => (
-            <StyledLi key={item.uid}>
+            <StyledLi key={item.id}>
                 {Object.entries(item).map((itemData, index) => (
                     <StyledElement key={index}>
                         <StyledField>{itemData[0]}: </StyledField>{" " + itemData[1]}

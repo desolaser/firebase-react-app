@@ -36,8 +36,8 @@ const BudgetsList = ({ data, history }) => {
                     {Object.entries(item).map((itemData, index) => 
                         itemData[0] === "products" 
                             ? (
-                                <div>
-                                    <StyledElement key={index}>
+                                <div key={index}>
+                                    <StyledElement>
                                         <StyledField>products</StyledField>
                                     </StyledElement>
                                     <StyledProducts>
