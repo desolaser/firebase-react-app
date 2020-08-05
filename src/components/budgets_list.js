@@ -25,8 +25,8 @@ const BudgetsList = ({ data, history }) => {
     }
     
     const deleteBudgets = id => {
-        firebase.product(id).remove()
-        alert("Product deleted successfully")
+        firebase.budget(id).remove()
+        alert("Budget deleted successfully")
     }
 
     return (
