@@ -33,7 +33,7 @@ const StyledButton = styled.button`
     margin-right: 1rem;
 `
 
-const StyledList = ({ data }) => (
+const StyledList = ({ data, buttons }) => (
     <StyledUl>
         {data.map(item => (
             <StyledLi key={item.id}>
@@ -42,6 +42,19 @@ const StyledList = ({ data }) => (
                         <StyledField>{itemData[0]}: </StyledField>{" " + itemData[1]}
                     </StyledElement>
                 ))}
+                {buttons 
+                    && (
+                        buttons.map((button, index) => (
+                            <StyledButton key={index}
+                                color={button.color} 
+                                textColor={button.textColor} 
+                                onClick={button.onClick}
+                                data-id={item.id}
+                            >
+                                {button.text}
+                            </StyledButton>
+                        ))
+                    )}
             </StyledLi>
         ))}
     </StyledUl>
