@@ -19,7 +19,7 @@ const EditProduct = ({ match }) => {
         })
 
         return () => firebase.products().off()
-    })
+    }, [])
 
     const handleSubmit = e => {
         e.preventDefault()
