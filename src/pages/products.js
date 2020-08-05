@@ -21,6 +21,8 @@ const Products = props => {
         
                 setProducts(productsList)
                 setLoading(false)
+            } else {
+                setProducts([])
             }
         })
 

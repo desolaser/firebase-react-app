@@ -22,6 +22,8 @@ const Budgets = ({ history }) => {
         
                 setBudgets(budgetsList)
                 setLoading(false)
+            } else {
+                setBudgets([])
             }
         })
 
