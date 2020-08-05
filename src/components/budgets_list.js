@@ -42,7 +42,7 @@ const BudgetsList = ({ data, history }) => {
                                     </StyledElement>
                                     <StyledProducts>
                                     {itemData[1].map((product, index) => (
-                                        <div>
+                                        <div key={index}>
                                             {`Product ${index + 1}`} 
                                             <StyledProductItem key={product.id + 1}>
                                                 <StyledField>Id: </StyledField>{" " + product.id}
