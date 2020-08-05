@@ -21,7 +21,7 @@ const BudgetsList = ({ data, history }) => {
     const firebase = useFirebase()
 
     const editBudgets = id => {
-        history.push(`/edit_product/${id}`)
+        history.push(`/edit_budget/${id}`)
     }
     
     const deleteBudgets = id => {

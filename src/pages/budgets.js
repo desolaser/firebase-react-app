@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import BudgetsList from '../components/budgets_list'
 import StyledLink from '../components/styled_link'
 
-const Budgets = () => {
+const Budgets = ({ history }) => {
     const firebase = useFirebase()
 
     const [ budgets, setBudgets ] = useState([])
@@ -33,7 +33,7 @@ const Budgets = () => {
             <h1>Budgets</h1>
             <StyledLink to="/add_budget">Add budget</StyledLink>
             {loading && <div>Loading ...</div>} 
-            <BudgetsList data={budgets} />
+            <BudgetsList data={budgets} history={history} />
         </Layout>
     )
 }
