@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useFirebase } from '../firebase'
+import * as _ from 'lodash'
  
 import Layout from '../components/layout'
 import Form from '../components/form'
@@ -61,17 +62,30 @@ const AddBudget = () => {
 
     const handleProductSubmit = e => {
         e.preventDefault()
-        firebase.product(selectedProduct).once("value").then(snapshot => {
+        firebase.product(selectedProduct).once("value").then(snapshot => {  
             const product = {
                 id: selectedProduct,
                 name: snapshot.val().name,
                 price: snapshot.val().price,
                 quantity
             }
-            setBudgetProducts([...budgetProducts,  product])
-            setSum(sum + (product.price * quantity))
-            setTaxes((sum + (product.price * quantity)) * 0.19)
-            setTotal(sum + (product.price * quantity) + (sum + (product.price * quantity)) * 0.19)
+            const checkProduct = _.find(budgetProducts, item => item.id === selectedProduct)
+            if (checkProduct) {
+                const newBudgetProducts = budgetProducts.map(item => {
+                    if(item.id === product.id) {
+                        item.price = parseInt(item.price, 10) + parseInt(product.price, 10)
+                        item.quantity = parseInt(item.quantity, 10) + parseInt(product.quantity, 10)
+                    }
+                    return item
+                });
+
+                setBudgetProducts(newBudgetProducts)
+            } else {
+                setBudgetProducts([...budgetProducts,  product])
+                setSum(sum + (product.price * quantity))
+                setTaxes((sum + (product.price * quantity)) * 0.19)
+                setTotal(sum + (product.price * quantity) + (sum + (product.price * quantity)) * 0.19)
+            }
         }).catch(error => {
             console.log("error".error)
         })
