@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
 
-import Layout from '../components/layout'
-import Form from '../components/form'
-import Alert from '../components/alert'
-import StyledLink from '../components/styled_link'
+import Layout from 'components/layout'
+import Form from 'components/form'
+import Alert from 'components/alert'
+import StyledLink from 'components/styled_link'
 
 const Register = props => {
     const firebase = useFirebase()

@@ -4,9 +4,9 @@ import {
     FormContainer,
     FormButton,
     FormTitle
-} from './form_components'
-import Input from './input'
-import Select from './select'
+} from './styled_components'
+import Input from 'components/input'
+import Select from 'components/select'
 
 const Form = ({ fields, handleSubmit, submitValue, title, disabled, display }) => {
     return (

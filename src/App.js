@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import AuthProvider from './auth'
-import PrivateRoute from './components/private_route'
+import PrivateRoute from './utils/private_route'
 
 import Home from './pages/home'
 import Account from './pages/account'

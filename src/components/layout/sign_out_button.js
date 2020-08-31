@@ -1,7 +1,7 @@
 import React from 'react'
-import { NavButton } from './nav_components'
-import { useFirebase } from '../firebase'
-import { useAuth } from '../auth'
+import { NavButton } from 'components/layout/styled_components'
+import { useFirebase } from 'firebase_context'
+import { useAuth } from 'auth'
  
 const SignOutButton = () => {
     const firebase = useFirebase()

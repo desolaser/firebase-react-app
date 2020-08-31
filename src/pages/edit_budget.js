@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
 import * as _ from 'lodash'
  
-import Layout from '../components/layout'
-import Form from '../components/form'
-import Input from '../components/input'
-import Panel from '../components/panel'
-import StyledList from '../components/styled_list'
-import { FormTitle } from '../components/form_components'
+import Layout from 'components/layout'
+import Form from 'components/form'
+import Input from 'components/input'
+import Panel from 'components/panel'
+import StyledList from 'components/styled_list'
+import { FormTitle } from 'components/form'
 
 const EditBudget = ({ match }) => {
     const firebase = useFirebase()

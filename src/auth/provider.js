@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import { AuthContext } from './auth'
-import { useFirebase } from '../firebase'
 
 const AuthProvider = props => {
-    const firebase = useFirebase()
-
     const existingTokens = JSON.parse(localStorage.getItem("tokens"))
     const userData = JSON.parse(localStorage.getItem("user"))
     const [authTokens, setAuthTokens] = useState(existingTokens)

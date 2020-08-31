@@ -1,12 +1,12 @@
 import React from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
 import {
     StyledUl,
     StyledLi,
     StyledElement,
     StyledField,
     StyledButton
-} from './styled_list'
+} from 'components/styled_list'
 
 const ProductsList = ({ data, history }) => {
     const firebase = useFirebase()

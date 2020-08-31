@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
  
-import Layout from '../components/layout'
-import Form from '../components/form'
+import Layout from 'components/layout'
+import Form from 'components/form'
 
 const AddProduct = () => {
     const firebase = useFirebase()

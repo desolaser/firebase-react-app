@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
 import {
     StyledUl,
     StyledLi,
     StyledElement,
     StyledField,
     StyledButton
-} from './styled_list'
+} from 'components/styled_list'
 
 const StyledProducts = styled.div`
     margin-left: 2rem;

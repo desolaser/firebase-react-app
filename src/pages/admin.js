@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
 
-import Layout from '../components/layout'
-import StyledList from '../components/styled_list'
+import Layout from 'components/layout'
+import StyledList from 'components/styled_list'
 
 const Admin = () => {
     const firebase = useFirebase()

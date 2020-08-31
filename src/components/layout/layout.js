@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Header from './header'
-import Footer from './footer'
+import Header from 'components/layout/header'
+import Footer from 'components/layout/footer'
 
 const Wrapper = styled.div`
     display: flex;

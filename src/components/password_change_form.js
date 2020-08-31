@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import queryString from 'query-string'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
  
-import Form from '../components/form'
-import Alert from '../components/alert'
+import Form from 'components/form'
+import Alert from 'components/alert'
 
 const PasswordChangeForm = props => {
     const firebase = useFirebase()

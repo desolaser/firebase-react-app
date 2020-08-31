@@ -1,8 +1,8 @@
 import React from 'react'
-import { useAuth } from '../auth'
+import { useAuth } from 'auth'
 
-import Layout from '../components/layout'
-import PasswordChangeForm from '../components/password_change_form'
+import Layout from 'components/layout'
+import PasswordChangeForm from 'components/password_change_form'
  
 const AccountPage = () => {
     const { user, setUser } = useAuth()

@@ -1,4 +1,4 @@
 import useAuth from './auth'
-import AuthProvider from './auth_provider'
+import AuthProvider from './provider'
 export default AuthProvider
 export { useAuth }

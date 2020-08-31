@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
  
-import Layout from '../components/layout'
-import Form from '../components/form'
+import Layout from 'components/layout'
+import Form from 'components/form'
 
 const EditProduct = ({ match }) => {
     const firebase = useFirebase()

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useFirebase } from '../firebase'
+import { useFirebase } from 'firebase_context'
 
-import Layout from '../components/layout'
-import ProductsList from '../components/products_list'
-import StyledLink from '../components/styled_link'
+import Layout from 'components/layout'
+import StyledLink from 'components/styled_link'
+
+import ProductsList from './list'
 
 const Products = props => {
     const firebase = useFirebase()

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { useFirebase } from '../firebase'
-import { useAuth } from '../auth'
+import { useFirebase } from 'firebase_context'
+import { useAuth } from 'auth'
  
-import Layout from '../components/layout'
-import Form from '../components/form'
-import Alert from '../components/alert'
-import StyledLink from '../components/styled_link'
+import Layout from 'components/layout'
+import Form from 'components/form'
+import Alert from 'components/alert'
+import StyledLink from 'components/styled_link'
 
 
 const Login = props => {

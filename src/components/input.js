@@ -4,7 +4,7 @@ import {
     FormControl,
     FormLabel,
     FormInput
-} from './form_components'
+} from 'components/form'
 
 const Input = ({ label, type, onChange, value }) => {
     return (

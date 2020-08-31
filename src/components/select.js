@@ -4,7 +4,7 @@ import {
     FormControl,
     FormLabel,
     FormSelect
-} from './form_components'
+} from 'components/form'
 
 const Select = ({ label, onChange, value, options }) => {
     return (

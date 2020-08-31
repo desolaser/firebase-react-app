@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../auth'
+import { useAuth } from 'auth'
 
 import { 
     NavBar, 
@@ -7,9 +7,9 @@ import {
     NavList, 
     NavItem, 
     NavLink 
-} from './nav_components'
+} from './styled_components'
 
-import SignOutButton from './sign_out_button'
+import SignOutButton from 'components/layout/sign_out_button'
 
 const Header = () => {
     const { user } = useAuth()
